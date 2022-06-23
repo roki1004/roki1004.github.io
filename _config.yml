@@ -9,7 +9,7 @@ name: Roki1004's shader study
 description: Shader theory and Making results for graphics
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://www.dropbox.com/s/t47qoe2x3ntc9pk/Logo_SIMNI_Roki1004.png?dl=0
+avatar: {{ site.baseurl }}/images/Logo_SIMNI_Roki1004.png
 
 #
 # Flags below are optional
