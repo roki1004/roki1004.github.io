@@ -5,8 +5,6 @@ permalink: /about/
 ---
 Hi, It's ChiYol Kim. I'm studying shader and doing Game Designer as my main job and Game Programmer as my sub job.
 
-Some information about you!
-
 ### More Information
 
 Graduated from University with a major in Visual Design.
