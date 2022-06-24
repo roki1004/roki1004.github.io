@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Profile
-permalink: /Profile/
+permalink: /about/
 ---
 Hi, It's ChiYol Kim. I'm studying shader and doing Game Designer as my main job and Game Programmer as my sub job.
 
