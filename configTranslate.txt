@@ -1,0 +1,90 @@
+#
+#  이 파일은 당신의 사이트를 맞춤설정하기 위한 구성 flags를 가지고 있습니다.
+#
+
+# 사이트의 이름 (맨 위에 표시됩니다.)
+name: Shader study of roki1004
+
+# 짧은 설명 (역시 맨 위에 표시됩니다.)
+description: Shader theory and Making results for graphics
+
+# 당신의 아바타나 프로필 그림의 URL (당신의 GitHub 프로필 그림을 사용할 수 있습니다.)
+# avatar: {{ site.baseurl }}/images/Logo_SIMNI_Roki1004.png
+avatar : https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
+
+#
+# 아래 Flag들이 옵션입니다.
+#
+
+# 당신이 입력하는 각 사용자 이름의 바닥글(footer)에 아이콘을 포함합니다.
+footer-links:
+  dribbble:
+  email:
+  facebook:
+  flickr:
+  github: roki1004 # "https://github.com/barryclark/jekyll-now"에서 barryclark/jekyll-now 부분만 적으면 된다.
+  instagram:
+  linkedin:
+  pinterest:
+  rss: # 동작하는 RSS 아이콘이라면 아무거나 이곳에 입력하세요.
+  twitter: # https://twitter.com/jekyllrb"에서 jekyllrb 부분만 적으면 된다.
+  stackoverflow: # 당신의 스택오버플로우 프로필, e.g. "users/50476/bart-kiers"
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: # plus.google.com/뒤에 오는 당신의 프로필 사용자 이름의 모든 부분을 적습니다. (일반 사용자는 2019년부터 사용 불가)
+
+
+# 게시물에 댓글을 달 수 있도록 Disqus 닉네임을 입력하세요. (사용자 이름 아님)
+# Disqus 계정의 설정 페이지에서 닉네임을 찾을 수 있습니다.
+disqus: roki1004
+
+# 추적 활성화를 위하서는 구글 북선 웹 추적 코드(예 UA-2110908-2)를 입력하세요.
+google_analytics:
+
+# 당신의 웹사이트 URL (예 http://barryclark.github.io or http://www.barryclark.co)
+# Sitemap.xml과 당신의 RSS피드에 사용됩니다.
+url: http://roki1004.github.io
+
+# GitHub 페이지의 프로젝트 저장소에서 사이트를 호스팅하는 경우
+# (http://yourusername.github.io/repository-name)
+# 당신의 유저 저장소를 말하는게 아닙니다. --> 이거 아님 (http://yourusername.github.io)
+# "/repository-name"과 같이, 여기에 baseurl을 추가합니다.
+baseurl: "/roki1004.github.io"
+
+#
+# !! 아래 설정들은 수정할 필요가 없습니다. !!
+#
+
+permalink: /:title/
+
+# 지금 당신이 사용중인 Jekyll의 Release Version
+version: v1.2.0
+
+# Jekyll 3은 이제 MD를 위한 Kramdown만 지원합니다.
+kramdown:
+  # [GitHub에서 삼중 백틱(```)으로 구분된 블록을 포함한]풍의 마크다운은 사용합니다.  
+  # 요로케 생긴건 (') = single quoto라고 합니다. (`) = backtick
+  input: GFM
+  # Jekyll 3과 GitHub Pages는 이제 syntax highlighting용 rouge만 지원합니다.
+  # rouge에 대해 알고 싶다면 (https://moon9342.github.io/jekyll-rouge)
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # css를 강조하는 기존 pygments 구문을 사용합니다.
+    css_class: 'highlight'
+
+# @imports를 사용하므로, Sass 부분 디렉토리를 설정합니다.
+# Sass에 대해 알고 싶다면 (https://heropy.blog/2018/01/31/sass/)
+sass:
+  style: :expanded # :compressed를 사용하여 축소하는걸 선호할 수 있습니다.
+
+# 다음의 플러그인들을 사용합니다.
+gems:
+  - jekyll-sitemap # 공식 Jekyll 사이트맵 젬을 사용해서 나의 사이트맵을 만듭니다.
+  - jekyll-feed # 공식 Jekyll 피드 젭을 사용해서 Atom 피드를 만듭니다.
+
+# 당신의 프로덕션 _side에서 아래 파알들을 제외합니다.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
