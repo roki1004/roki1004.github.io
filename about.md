@@ -1,15 +1,18 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Profile
+permalink: /Profile/
 ---
+Hi, It's ChiYol Kim. I'm studying shader and doing Game Designer as my main job and Game Programmer as my sub job.
 
 Some information about you!
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+Graduated from University with a major in Visual Design.
+Game Designer at Hound 13 company.
+Game Programmer at SIMNI Studio.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[roki1004@gmail.com](mailto:roki1004@gmail.com)
