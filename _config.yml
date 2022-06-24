@@ -9,7 +9,8 @@ name: Shader study of roki1004
 description: Shader theory and Making results for graphics
 
 # 당신의 아바타나 프로필 그림의 URL (당신의 GitHub 프로필 그림을 사용할 수 있습니다.)
-avatar: {{ site.baseurl }}/images/Logo_SIMNI_Roki1004.png
+# avatar: {{ site.baseurl }}/images/Logo_SIMNI_Roki1004.png
+avatar : https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
 
 #
 # 아래 Flag들이 옵션입니다.
