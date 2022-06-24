@@ -1,4 +1,13 @@
-**튜토리얼** : 빛의 작동 원리 & 그림자의 종류
+---
+title : "**튜토리얼** : 빛의 작동 원리 & 그림자의 종류"
+last_modified_at : 2022-06-24-09T16:14:23-15:00
+categories:
+    - Article
+tags:
+    - Shader
+    - Article
+    - Light
+---
 ==
 [출처 : tutorial-how-light-works-types-of-shadows](https://80.lv/articles/tutorial-how-light-works-types-of-shadows/?fbclid=IwAR39hq0y4ME3h1OLaHULwC9y2saooWXbQvYii5oxsPPS2jzfStHTpB61gvQ)
 
