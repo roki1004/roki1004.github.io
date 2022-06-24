@@ -21,12 +21,12 @@ footer-links:
   email:
   facebook:
   flickr:
-  github: barryclark/jekyll-now
+  github: # "https://github.com/barryclark/jekyll-now"에서 barryclark/jekyll-now 부분만 적으면 된다.
   instagram:
   linkedin:
   pinterest:
   rss: # 동작하는 RSS 아이콘이라면 아무거나 이곳에 입력하세요.
-  twitter: jekyllrb
+  twitter: # https://twitter.com/jekyllrb"에서 jekyllrb 부분만 적으면 된다.
   stackoverflow: # 당신의 스택오버플로우 프로필, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # plus.google.com/뒤에 오는 당신의 프로필 사용자 이름의 모든 부분을 적습니다. (일반 사용자는 2019년부터 사용 불가)
@@ -41,7 +41,7 @@ google_analytics:
 
 # 당신의 웹사이트 URL (예 http://barryclark.github.io or http://www.barryclark.co)
 # Sitemap.xml과 당신의 RSS피드에 사용됩니다.
-url: https://roki1004.github.io
+url: http://roki1004.github.io
 
 # GitHub 페이지의 프로젝트 저장소에서 사이트를 호스팅하는 경우
 # (http://yourusername.github.io/repository-name)
