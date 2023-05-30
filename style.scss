@@ -32,7 +32,7 @@ body {
 
 m1 {
   font-family: $helveticaNeue;
-  color: $darkerGray;
+  color: $blue;
   font-weight: bold;
 
   line-height: 1.7;
@@ -42,6 +42,12 @@ m1 {
   @include mobile {
     line-height: 1.4;
   }
+}
+
+m {
+  font-size: 16px;
+  margin: 15px 0;
+  color: $white;
 }
 
 h1, h2, h3, h4, h5, h6 {
