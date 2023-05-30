@@ -242,10 +242,10 @@ nav {
   }
 }
 
-introduce {
+.introduce {
   margin: 20px 0 0 0;
   color: $white;
-  font-size: 14px;
+  font-size: 16px;
 
   @include mobile {
     margin: 5px 0;
