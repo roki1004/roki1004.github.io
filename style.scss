@@ -403,11 +403,13 @@ nav {
 
 .videoPortrait {
 	cursor: pointer;
-  width: 30%;
-  vertical-align: top;
-  text-align: left;
-  padding: 10px;
-  max-width: 360px;
+  width: 35%;
+  vertical-align: middle;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-height: 720px;
 }
 
 .videoPortraitText {
@@ -423,15 +425,19 @@ nav {
 .videoLandscape {
 	cursor: pointer;
   width: 75%;
-  text-align: left;
-  padding: 10px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 3px;
   max-width: 640px;
 }
 
 .videoLandscapeSpec {
+  background-color: rgb(67, 67, 67);
   width: 25%;
   vertical-align: top;
-  text-align: left;
+  text-align: center;
   margin-left: 10px;
   margin-right: 10px;
   max-width: 640px;
