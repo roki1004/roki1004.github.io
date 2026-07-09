@@ -1,0 +1,308 @@
+/* ============================================================
+   Chi Yol Kim — portfolio
+   dark "engine viewport" theme + hologram cyan accent
+   ============================================================ */
+
+:root{
+  --ink:#0A0E16;
+  --surface:#101724;
+  --surface2:#151E30;
+  --line:#22304A;
+  --text:#E9EDF5;
+  --muted:#93A0B8;
+  --holo:#6FD7FF;
+  --holo-dim:rgba(111,215,255,.14);
+  --mag:#D97BE8;
+  --chip:#0E1522;
+  --shadow:0 18px 44px rgba(2,6,14,.5);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--text);
+  font:15px/1.65 "Segoe UI","Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.mono{font-family:"Cascadia Code",Consolas,"SF Mono",Menlo,monospace}
+a{color:inherit}
+
+/* ---------- nav ---------- */
+nav{
+  position:fixed; inset:0 0 auto 0; z-index:40;
+  display:flex; align-items:center; gap:22px;
+  padding:14px 28px;
+  background:rgba(10,14,22,.72);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(34,48,74,.6);
+}
+.nav-name{font-family:"Cascadia Code",Consolas,monospace; font-size:13px; letter-spacing:.04em; text-decoration:none; color:var(--text)}
+.nav-name b{color:var(--holo); font-weight:600}
+.nav-links{display:flex; gap:18px; margin-left:auto}
+.nav-links a{
+  font-family:"Cascadia Code",Consolas,monospace; font-size:12px; color:var(--muted);
+  text-decoration:none; letter-spacing:.03em;
+}
+.nav-links a:hover{color:var(--holo)}
+.nav-resume{
+  font-family:"Cascadia Code",Consolas,monospace; font-size:12px;
+  color:var(--ink); background:var(--holo);
+  padding:7px 14px; border-radius:4px; text-decoration:none; font-weight:600;
+}
+@media (max-width:720px){ .nav-links{display:none} }
+
+/* ---------- hero ---------- */
+header.hero{
+  position:relative; min-height:100vh; min-height:100svh;
+  display:flex; align-items:flex-end;
+  overflow:hidden;
+}
+#gl{position:absolute; inset:0; width:100%; height:100%; display:block}
+.hero-fade{
+  position:absolute; inset:auto 0 0 0; height:38%;
+  background:linear-gradient(to bottom, transparent, var(--ink));
+  pointer-events:none;
+}
+.hero-inner{
+  position:relative; z-index:2;
+  width:100%; max-width:1120px; margin:0 auto;
+  padding:0 28px 84px;
+  display:flex; align-items:flex-end; gap:32px;
+}
+.hero-copy{max-width:640px}
+.eyebrow{
+  font-family:"Cascadia Code",Consolas,monospace; font-size:12.5px;
+  color:var(--holo); letter-spacing:.05em; margin:0 0 18px;
+}
+h1{
+  font-family:"Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+  font-size:clamp(2.5rem, 6vw, 4.4rem);
+  font-weight:700; letter-spacing:-.035em; line-height:1.04;
+  margin:0 0 20px; text-wrap:balance;
+}
+h1 em{font-style:normal; color:var(--holo)}
+.hero-sub{color:var(--muted); font-size:16.5px; max-width:54ch; margin:0}
+.uniforms{
+  margin-left:auto; flex-shrink:0;
+  font-family:"Cascadia Code",Consolas,monospace; font-size:12px; line-height:1.9;
+  color:var(--muted);
+  background:rgba(10,14,22,.55);
+  border:1px solid rgba(34,48,74,.7);
+  border-radius:6px; padding:14px 18px;
+  backdrop-filter:blur(6px);
+  font-variant-numeric:tabular-nums;
+  min-width:196px;
+}
+.uniforms .k{color:var(--holo)}
+.uniforms .c{color:var(--muted); opacity:.65}
+@media (max-width:860px){ .uniforms{display:none} .hero-inner{padding-bottom:64px} }
+
+/* ---------- shared section ---------- */
+section{max-width:1120px; margin:0 auto; padding:84px 28px 0}
+.sec-label{
+  font-family:"Cascadia Code",Consolas,monospace; font-size:12.5px;
+  color:var(--holo); letter-spacing:.05em; margin:0 0 10px;
+}
+.sec-title{
+  font-family:"Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+  font-size:clamp(1.7rem,3.4vw,2.4rem); font-weight:700; letter-spacing:-.03em;
+  margin:0 0 8px; text-wrap:balance;
+}
+.sec-sub{color:var(--muted); margin:0 0 40px; max-width:62ch}
+
+/* ---------- stats strip ---------- */
+.strip{border-block:1px solid var(--line)}
+.strip-inner{
+  max-width:1120px; margin:0 auto; padding:18px 28px;
+  display:flex; flex-wrap:wrap; gap:12px 36px;
+  font-family:"Cascadia Code",Consolas,monospace; font-size:12.5px; color:var(--muted);
+  font-variant-numeric:tabular-nums;
+}
+.strip-inner b{color:var(--text); font-weight:600}
+
+/* ---------- featured ---------- */
+.feat{
+  display:grid; grid-template-columns:7fr 5fr;
+  border:1px solid var(--line); border-radius:10px; overflow:hidden;
+  background:var(--surface);
+  margin-bottom:28px;
+  box-shadow:var(--shadow);
+}
+.feat:nth-of-type(even){grid-template-columns:5fr 7fr}
+.feat:nth-of-type(even) .media{order:2}
+
+/* media block — thumbnail first, iframe injected on click */
+.media{
+  position:relative; aspect-ratio:16/9; min-height:100%;
+  background:
+    radial-gradient(120% 90% at 20% 15%, var(--fm1, rgba(111,215,255,.3)) 0%, transparent 55%),
+    radial-gradient(110% 100% at 85% 90%, var(--fm2, rgba(217,123,232,.2)) 0%, transparent 60%),
+    var(--fm0, #0D1B2E);
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+.media .thumb{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; opacity:.85;
+}
+.media iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+.play{
+  position:relative; z-index:2;
+  width:64px; height:64px; border-radius:50%;
+  border:1px solid rgba(255,255,255,.5);
+  background:rgba(8,12,20,.45); backdrop-filter:blur(4px);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; padding:0;
+  transition:transform .15s ease, background .15s ease;
+}
+.play:hover{transform:scale(1.08); background:rgba(8,12,20,.65)}
+.play::after{
+  content:""; margin-left:4px;
+  border-style:solid; border-width:9px 0 9px 15px;
+  border-color:transparent transparent transparent #fff;
+}
+/* in-development media block (no video yet) */
+.wip{
+  position:relative; z-index:2;
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+  font-family:"Cascadia Code",Consolas,monospace; text-align:center;
+  padding:20px;
+}
+.wip-status{
+  display:flex; align-items:center; gap:8px;
+  font-size:11px; letter-spacing:.14em; color:var(--holo);
+}
+.wip-dot{
+  width:7px; height:7px; border-radius:50%; background:var(--holo);
+  animation:wipPulse 1.6s ease-in-out infinite;
+}
+@keyframes wipPulse{ 0%,100%{opacity:1} 50%{opacity:.25} }
+.wip-phases{font-size:14px; color:var(--text); letter-spacing:.03em}
+.wip-phases em{font-style:normal; color:var(--holo)}
+.wip-note{font-size:10.5px; color:var(--muted); letter-spacing:.05em}
+@media (prefers-reduced-motion: reduce){ .wip-dot{animation:none} }
+
+.media-note{
+  position:absolute; z-index:2; left:14px; bottom:12px;
+  font-family:"Cascadia Code",Consolas,monospace; font-size:10.5px; letter-spacing:.06em;
+  color:rgba(255,255,255,.78); background:rgba(8,12,20,.5);
+  padding:3px 8px; border-radius:3px; backdrop-filter:blur(4px);
+  pointer-events:none;
+}
+
+.feat-body{padding:30px 32px; display:flex; flex-direction:column; gap:14px}
+.feat-year{
+  font-family:"Cascadia Code",Consolas,monospace; font-size:11.5px; color:var(--holo); letter-spacing:.08em;
+}
+.feat-title{
+  font-family:"Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+  font-size:1.55rem; font-weight:700; letter-spacing:-.02em; margin:0; line-height:1.15;
+}
+.feat-desc{color:var(--muted); margin:0; font-size:14.5px}
+.feat-desc b{color:var(--text); font-weight:600}
+.specs{
+  margin-top:auto; padding-top:16px; border-top:1px solid var(--line);
+  display:grid; grid-template-columns:repeat(4,auto); gap:6px 26px; width:max-content;
+  font-family:"Cascadia Code",Consolas,monospace; font-size:11.5px; color:var(--muted);
+  font-variant-numeric:tabular-nums;
+}
+.specs span{display:block}
+.specs .sk{font-size:10px; letter-spacing:.1em; text-transform:uppercase; opacity:.65}
+.specs .sv{color:var(--text)}
+@media (max-width:820px){
+  .feat, .feat:nth-of-type(even){grid-template-columns:1fr}
+  .feat:nth-of-type(even) .media{order:0}
+  .media{min-height:0}
+  .specs{grid-template-columns:repeat(2,auto); width:auto}
+}
+
+/* ---------- archive ---------- */
+.filters{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:26px}
+.filters button{
+  font-family:"Cascadia Code",Consolas,monospace; font-size:12px;
+  color:var(--muted); background:var(--chip);
+  border:1px solid var(--line); border-radius:4px;
+  padding:6px 13px; cursor:pointer; letter-spacing:.03em;
+}
+.filters button:hover{color:var(--text); border-color:var(--holo)}
+.filters button[aria-pressed="true"]{
+  color:var(--holo); border-color:var(--holo); background:var(--holo-dim);
+}
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px}
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:8px;
+  padding:20px 20px 16px; display:flex; flex-direction:column; gap:8px;
+  transition:transform .18s ease, border-color .18s ease;
+}
+.card:hover{transform:translateY(-3px); border-color:rgba(111,215,255,.55)}
+.card[hidden]{display:none}
+.card-top{display:flex; align-items:baseline; gap:10px}
+.card-title{font-weight:700; font-size:15.5px; letter-spacing:-.01em}
+.card-year{font-family:"Cascadia Code",Consolas,monospace; font-size:11px; color:var(--muted); margin-left:auto; font-variant-numeric:tabular-nums}
+.card-desc{color:var(--muted); font-size:13.5px; margin:0; flex:1}
+.card-meta{
+  display:flex; gap:8px; flex-wrap:wrap; align-items:center;
+  padding-top:10px; border-top:1px solid var(--line);
+}
+.tag{
+  font-family:"Cascadia Code",Consolas,monospace; font-size:10.5px; letter-spacing:.05em;
+  color:var(--holo); background:var(--holo-dim);
+  border-radius:3px; padding:2px 7px;
+}
+.meta{
+  font-family:"Cascadia Code",Consolas,monospace; font-size:10.5px; color:var(--muted);
+  padding:2px 0; font-variant-numeric:tabular-nums;
+}
+.watch{
+  font-family:"Cascadia Code",Consolas,monospace; font-size:10.5px;
+  color:var(--holo); text-decoration:none; margin-left:auto; letter-spacing:.04em;
+}
+.watch:hover{text-decoration:underline}
+
+/* ---------- journey ---------- */
+.steps{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; counter-reset:step}
+.step{
+  background:var(--surface); border:1px solid var(--line); border-radius:8px;
+  padding:24px; position:relative; counter-increment:step;
+}
+.step::before{
+  content:"0" counter(step);
+  font-family:"Cascadia Code",Consolas,monospace; font-size:11.5px; color:var(--mag);
+  letter-spacing:.1em; display:block; margin-bottom:14px;
+}
+.step h3{margin:0 0 6px; font-size:16px; letter-spacing:-.01em}
+.step .where{font-family:"Cascadia Code",Consolas,monospace; font-size:11.5px; color:var(--holo); margin:0 0 10px}
+.step p{color:var(--muted); font-size:13.5px; margin:0}
+@media (max-width:820px){ .steps{grid-template-columns:1fr} }
+
+/* ---------- contact ---------- */
+.contact{padding-bottom:40px}
+.contact-row{display:flex; flex-wrap:wrap; gap:14px; margin-top:26px}
+.btn{
+  font-family:"Cascadia Code",Consolas,monospace; font-size:13px; text-decoration:none;
+  padding:11px 20px; border-radius:5px; letter-spacing:.02em;
+}
+.btn-primary{background:var(--holo); color:var(--ink); font-weight:600}
+.btn-ghost{border:1px solid var(--line); color:var(--text)}
+.btn-ghost:hover{border-color:var(--holo); color:var(--holo)}
+
+footer.site{
+  max-width:1120px; margin:70px auto 0; padding:22px 28px 30px;
+  border-top:1px solid var(--line);
+  display:flex; flex-wrap:wrap; gap:10px 28px;
+  font-family:"Cascadia Code",Consolas,monospace; font-size:11.5px; color:var(--muted);
+}
+footer.site span:last-child{margin-left:auto}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{transition:none; opacity:1; transform:none}
+  .card{transition:none}
+  .play{transition:none}
+}
+:focus-visible{outline:2px solid var(--holo); outline-offset:2px}
