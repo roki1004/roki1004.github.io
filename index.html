@@ -1,18 +1,290 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chi Yol Kim — Game Developer</title>
+  <meta name="description" content="Game developer portfolio of Chi Yol Kim — Unity, shaders, VR simulations on Meta Quest. Designer-turned-programmer, 12 projects since 2016.">
+  <link rel="icon" type="image/png" href="/images/ChiyolKim01.png">
+  <meta property="og:title" content="Chi Yol Kim — Game Developer">
+  <meta property="og:description" content="Unity, shaders, and VR simulations on Meta Quest. Designer-turned-programmer, 12 projects since 2016.">
+  <meta property="og:image" content="https://roki1004.github.io/images/ChiyolKim01.png">
+  <meta property="og:url" content="https://roki1004.github.io/">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+<nav>
+  <a class="nav-name" href="#"><b>chiyol</b>.kim <span style="opacity:.5">— game developer</span></a>
+  <div class="nav-links">
+    <a href="#featured">// featured</a>
+    <a href="#archive">// archive</a>
+    <a href="#journey">// journey</a>
+    <a href="#contact">// contact</a>
+  </div>
+  <a class="nav-resume" href="/documents/chiyolkimresume.pdf" target="_blank" rel="noopener">resume.pdf</a>
+</nav>
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+<header class="hero">
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="hero-fade"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">// live fragment shader — move your cursor</p>
+      <h1>I build how games <em>look</em> — and how they <em>run</em>.</h1>
+      <p class="hero-sub">
+        Chi Yol Kim. Designer-turned-programmer with 12 projects since 2016 —
+        VR training simulations on Meta Quest, shipped mobile games, and the
+        Unity shaders that tie a world together.
+      </p>
+    </div>
+    <div class="uniforms" aria-hidden="true">
+      <span class="c">// hero.frag</span><br>
+      <span class="k">u_time</span>&nbsp;&nbsp;&nbsp;<span id="uTime">0.00</span><br>
+      <span class="k">u_mouse</span>&nbsp;&nbsp;<span id="uMouse">0.50, 0.50</span><br>
+      <span class="k">fps</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="uFps">--</span>
+    </div>
+  </div>
+</header>
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+<div class="strip">
+  <div class="strip-inner">
+    <span><b>2016 → 2026</b> ten years building</span>
+    <span><b>13</b> projects · <b>6</b> shipped</span>
+    <span><b>4</b> VR / education sims on Meta Quest</span>
+    <span><b>1</b> discipline switch — designer → programmer</span>
+  </div>
 </div>
+
+<section id="featured">
+  <p class="sec-label reveal">// featured</p>
+  <h2 class="sec-title reveal">Selected work</h2>
+  <p class="sec-sub reveal">What I'm building now, plus three shipped projects that show the range: a long-haul VR simulation, a live-ops multiplayer build, and the shader craft behind both. Videos load when you press play.</p>
+
+  <article class="feat reveal">
+    <div class="media" style="--fm0:#0D2230; --fm1:rgba(111,255,214,.22); --fm2:rgba(111,215,255,.3)">
+      <div class="wip">
+        <span class="wip-status"><span class="wip-dot"></span>IN DEVELOPMENT</span>
+        <span class="wip-phases">phase 01 · web <em>→</em> phase 02 · vr</span>
+        <span class="wip-note">footage coming with the first playable</span>
+      </div>
+    </div>
+    <div class="feat-body">
+      <span class="feat-year">2026 — PRESENT · DIGITAL TWIN · WEB → VR</span>
+      <h3 class="feat-title">Digital Twin Project</h3>
+      <p class="feat-desc">
+        An in-progress <b>digital twin</b> platform, built in deliberate phases —
+        shipping on the <b>web first</b>, then scaling the same world up to
+        <b>VR on Meta Quest</b>. One codebase, one Unity project, growing from
+        browser to headset.
+      </p>
+      <div class="specs">
+        <span><span class="sk">platform</span><span class="sv">Web · Quest (planned)</span></span>
+        <span><span class="sk">team</span><span class="sv">5</span></span>
+        <span><span class="sk">duration</span><span class="sv">TBD</span></span>
+        <span><span class="sk">engine</span><span class="sv">Unity</span></span>
+      </div>
+    </div>
+  </article>
+
+  <article class="feat reveal">
+    <div class="media" data-embed="linkedin" data-id="7336684473519861760"
+         style="--fm0:#0D1B2E; --fm1:rgba(111,215,255,.35); --fm2:rgba(217,123,232,.22)">
+      <button class="play" aria-label="Play VR Briscoe video"></button>
+      <span class="media-note">▶ VIDEO — linkedin embed</span>
+    </div>
+    <div class="feat-body">
+      <span class="feat-year">2024 — 2025 · VR · EDUCATION</span>
+      <h3 class="feat-title">VR Briscoe</h3>
+      <p class="feat-desc">
+        A reflux-experiment chemistry simulation for students on Meta Quest.
+        Extended the <b>ObjectiveSystem</b> built for Micropipette, authored the
+        <b>hologram guide shaders</b>, highlight effects, and render-order management
+        across the whole app — then profiled it with Unity Profiler, Frame Debugger,
+        and <b>Meta VSS</b> until it held frame on device.
+      </p>
+      <div class="specs">
+        <span><span class="sk">platform</span><span class="sv">Meta Quest</span></span>
+        <span><span class="sk">team</span><span class="sv">5</span></span>
+        <span><span class="sk">duration</span><span class="sv">13 months</span></span>
+        <span><span class="sk">engine</span><span class="sv">Unity</span></span>
+      </div>
+    </div>
+  </article>
+
+  <article class="feat reveal">
+    <div class="media" data-embed="linkedin" data-id="7316417576270532608"
+         style="--fm0:#101A2C; --fm1:rgba(120,150,255,.3); --fm2:rgba(111,215,255,.25)">
+      <button class="play" aria-label="Play VR Escape from Space video"></button>
+      <span class="media-note">▶ VIDEO — linkedin embed</span>
+    </div>
+    <div class="feat-body">
+      <span class="feat-year">2025 · VR · LIVE OPS</span>
+      <h3 class="feat-title">VR Escape from Space</h3>
+      <p class="feat-desc">
+        Team escape experience on Meta Quest. Designed the in-game flow and owned the
+        <b>Firebase</b> layer — cutting packet transmissions to keep server costs down
+        without losing responsiveness — then ran <b>live maintenance</b> after launch:
+        asset updates and stability work on a running product.
+      </p>
+      <div class="specs">
+        <span><span class="sk">platform</span><span class="sv">Meta Quest</span></span>
+        <span><span class="sk">team</span><span class="sv">7</span></span>
+        <span><span class="sk">duration</span><span class="sv">3 months</span></span>
+        <span><span class="sk">engine</span><span class="sv">Unity</span></span>
+      </div>
+    </div>
+  </article>
+
+  <article class="feat reveal">
+    <div class="media" data-embed="youtube" data-id="hiPAtUSueU4"
+         style="--fm0:#141126; --fm1:rgba(217,123,232,.3); --fm2:rgba(111,215,255,.3)">
+      <img class="thumb" src="https://i.ytimg.com/vi/hiPAtUSueU4/hqdefault.jpg" alt="" loading="lazy">
+      <button class="play" aria-label="Play Shader Portfolio video"></button>
+      <span class="media-note">▶ VIDEO — youtube embed</span>
+    </div>
+    <div class="feat-body">
+      <span class="feat-year">2023 · SHADER · STUDY</span>
+      <h3 class="feat-title">Shader Portfolio</h3>
+      <p class="feat-desc">
+        A 12-week deep dive into <b>Unity CG / HLSL</b>, re-implemented in Shader Graph.
+        Shaders are the first thing a player feels about a world — this is where the
+        design major and the programmer meet. <b>The background of this page is the same
+        craft, running live in WebGL.</b>
+      </p>
+      <div class="specs">
+        <span><span class="sk">platform</span><span class="sv">PC</span></span>
+        <span><span class="sk">team</span><span class="sv">Solo</span></span>
+        <span><span class="sk">duration</span><span class="sv">12 weeks</span></span>
+        <span><span class="sk">engine</span><span class="sv">Unity</span></span>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="archive">
+  <p class="sec-label reveal">// archive</p>
+  <h2 class="sec-title reveal">Every project, 2016 → today</h2>
+  <p class="sec-sub reveal">Filter by what you're hiring for.</p>
+
+  <div class="filters reveal" role="group" aria-label="Project filters">
+    <button aria-pressed="true" data-f="all">all</button>
+    <button aria-pressed="false" data-f="vr">vr</button>
+    <button aria-pressed="false" data-f="mobile">mobile</button>
+    <button aria-pressed="false" data-f="web">web</button>
+    <button aria-pressed="false" data-f="shader">shader</button>
+    <button aria-pressed="false" data-f="prototype">prototype</button>
+    <button aria-pressed="false" data-f="tools">tools</button>
+  </div>
+
+  <div class="grid reveal">
+    <article class="card" data-tags="vr">
+      <div class="card-top"><span class="card-title">VR Micropipette</span><span class="card-year">2024</span></div>
+      <p class="card-desc">Lab training simulation where the ObjectiveSystem was born. Foundation for everything that followed.</p>
+      <div class="card-meta"><span class="tag">vr</span><span class="meta">Quest · 5 · 5 mo</span>
+        <a class="watch" href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7351572242486415364/" target="_blank" rel="noopener">▶ watch</a></div>
+    </article>
+    <article class="card" data-tags="web">
+      <div class="card-top"><span class="card-title">SIM Math</span><span class="card-year">2024–25</span></div>
+      <p class="card-desc">Web-based math education app. Progressive data loading at entry and aggressive build-size reduction for a smooth first run.</p>
+      <div class="card-meta"><span class="tag">web</span><span class="meta">Web · solo · 2 mo</span>
+        <a class="watch" href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7345425070913187840/" target="_blank" rel="noopener">▶ watch</a></div>
+    </article>
+    <article class="card" data-tags="mobile">
+      <div class="card-top"><span class="card-title">World DoMeowNation</span><span class="card-year">2021–22</span></div>
+      <p class="card-desc">Cat-conquest mobile game, two-person team. Exhibited at BIC; top-3 at a national dev academy.</p>
+      <div class="card-meta"><span class="tag">mobile</span><span class="meta">Android · 2 · 52 wk</span>
+        <a class="watch" href="https://www.youtube.com/watch?v=UuOjOz59PAE" target="_blank" rel="noopener">▶ watch</a></div>
+    </article>
+    <article class="card" data-tags="prototype mobile">
+      <div class="card-top"><span class="card-title">Archero UI Study</span><span class="card-year">2020</span></div>
+      <p class="card-desc">Rebuilt Archero's sweep UI from scratch to understand the pattern that started with Clash Royale.</p>
+      <div class="card-meta"><span class="tag">prototype</span><span class="meta">Android · solo · 5 wk</span>
+        <a class="watch" href="https://www.youtube.com/watch?v=zuiJZVmC7Pw" target="_blank" rel="noopener">▶ watch</a></div>
+    </article>
+    <article class="card" data-tags="prototype">
+      <div class="card-top"><span class="card-title">HEX SRPG</span><span class="card-year">2020</span></div>
+      <p class="card-desc">Hex-grid tactics prototype — pathfinding, turn order, and grid math.</p>
+      <div class="card-meta"><span class="tag">prototype</span><span class="meta">PC · solo · 9 wk</span>
+        <a class="watch" href="https://www.youtube.com/watch?v=Z2HepO6_yTo" target="_blank" rel="noopener">▶ watch</a></div>
+    </article>
+    <article class="card" data-tags="mobile">
+      <div class="card-top"><span class="card-title">Plus Minus</span><span class="card-year">2019</span></div>
+      <p class="card-desc">Released puzzle game. GPGS and Ads plugin integration; a hard-earned lesson in A/B testing early.</p>
+      <div class="card-meta"><span class="tag">mobile</span><span class="meta">Android · solo · 10 wk</span>
+        <a class="watch" href="https://www.youtube.com/watch?v=29auefg8uwg" target="_blank" rel="noopener">▶ watch</a></div>
+    </article>
+    <article class="card" data-tags="prototype">
+      <div class="card-top"><span class="card-title">AOS Clicker</span><span class="card-year">2018</span></div>
+      <p class="card-desc">Clicker built as lecture material — teaching the loop by building one.</p>
+      <div class="card-meta"><span class="tag">prototype</span><span class="meta">Android · solo · 4 wk</span>
+        <a class="watch" href="https://www.youtube.com/watch?v=wqleMKsX0n4" target="_blank" rel="noopener">▶ watch</a></div>
+    </article>
+    <article class="card" data-tags="mobile">
+      <div class="card-top"><span class="card-title">Age of Survival</span><span class="card-year">2017</span></div>
+      <p class="card-desc">Solo survival game — built the map tool and every resource myself to keep development moving.</p>
+      <div class="card-meta"><span class="tag">mobile</span><span class="meta">Android · solo · 16 wk</span>
+        <a class="watch" href="https://www.youtube.com/watch?v=noGN3dcqEUI" target="_blank" rel="noopener">▶ watch</a></div>
+    </article>
+    <article class="card" data-tags="mobile">
+      <div class="card-top"><span class="card-title">Arkanoid Hero</span><span class="card-year">2016</span></div>
+      <p class="card-desc">First shipped game. Where the whole thing started.</p>
+      <div class="card-meta"><span class="tag">mobile</span><span class="meta">Android · solo · 7 wk</span>
+        <a class="watch" href="https://www.youtube.com/watch?v=vR_aG7e8Lqo" target="_blank" rel="noopener">▶ watch</a></div>
+    </article>
+    <article class="card" data-tags="tools">
+      <div class="card-top"><span class="card-title">Excel Toolchain</span><span class="card-year">VSTO</span></div>
+      <p class="card-desc">SVN plugin, data search, and CSV/JSON export with encryption — pipeline tools that simplified a design team's workflow.</p>
+      <div class="card-meta"><span class="tag">tools</span><span class="meta">C# · VSTO</span></div>
+    </article>
+    <article class="card" data-tags="shader">
+      <div class="card-top"><span class="card-title">Custom Shaders</span><span class="card-year">2023–</span></div>
+      <p class="card-desc">Ongoing CG/HLSL and Shader Graph studies — from default-shader fundamentals to hologram and highlight effects shipped in VR.</p>
+      <div class="card-meta"><span class="tag">shader</span><span class="meta">Unity · HLSL</span>
+        <a class="watch" href="https://www.youtube.com/watch?v=hiPAtUSueU4" target="_blank" rel="noopener">▶ watch</a></div>
+    </article>
+  </div>
+</section>
+
+<section id="journey">
+  <p class="sec-label reveal">// journey</p>
+  <h2 class="sec-title reveal">Three disciplines, one developer</h2>
+  <p class="sec-sub reveal">Most developers see one side of production. I've shipped from all three chairs — which is why the shaders look right, the systems hold up, and the design intent survives.</p>
+  <div class="steps reveal">
+    <div class="step">
+      <h3>Visual Design</h3>
+      <p class="where">university major</p>
+      <p>Learned how things should look — composition, color, and the graphic instinct that later became shader work.</p>
+    </div>
+    <div class="step">
+      <h3>Game Designer</h3>
+      <p class="where">Hound 13</p>
+      <p>Learned why games are fun — systems, balance, and data. Built VSTO Excel tooling to make the whole team faster.</p>
+    </div>
+    <div class="step">
+      <h3>Game Programmer</h3>
+      <p class="where">SIMNI Studio</p>
+      <p>Learned to build it all — VR simulations on Meta Quest, Firebase live ops, and optimization that holds frame on device.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <p class="sec-label reveal">// contact</p>
+  <h2 class="sec-title reveal">Let's build something.</h2>
+  <p class="sec-sub reveal">Open to game and XR development roles — Unity, shaders, and the space between design and code.</p>
+  <div class="contact-row reveal">
+    <a class="btn btn-primary" href="mailto:roki1004@gmail.com">roki1004@gmail.com</a>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/in/roki1004" target="_blank" rel="noopener">linkedin/roki1004</a>
+    <a class="btn btn-ghost" href="/documents/chiyolkimresume.pdf" target="_blank" rel="noopener">resume.pdf</a>
+  </div>
+</section>
+
+<footer class="site">
+  <span>© 2026 Chi Yol Kim</span>
+  <span>built with a fragment shader, not a template</span>
+</footer>
+
+<script src="/assets/main.js"></script>
+</body>
+</html>
