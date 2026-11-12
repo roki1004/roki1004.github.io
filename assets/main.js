@@ -194,6 +194,17 @@
     btn.addEventListener("click", function () {
       var kind = media.getAttribute("data-embed");
       var id = media.getAttribute("data-id");
+      if (kind === "file") {
+        // 사이트에 직접 올린 mp4 — 누르기 전에는 포스터 이미지만 받는다
+        var video = document.createElement("video");
+        video.src = media.getAttribute("data-src");
+        video.controls = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        media.innerHTML = "";
+        media.appendChild(video);
+        return;
+      }
       if (!EMBED[kind]) return;
       var iframe = document.createElement("iframe");
       iframe.src = EMBED[kind](id);
